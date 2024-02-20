@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 // function prototype
 int isPalindrome(int x);
@@ -31,25 +29,15 @@ int isPalindrome(int x) {
     return 1;
   }
 
-  char str[20];
-  sprintf(str, "%d", x);
-  int len = strlen(str);
+  long temp = x;
+  long reversed = 0;
+  int dig;
 
-  // method 1
-  //   for (int i = 0; i < len / 2; i++) {
-  //     if (str[i] != str[len - i - 1]) {
-  //       return 0;
-  //     }
-  //   }
-
-  // method 2
-  int left = len - 1;
-  for (int right = 0; right < len / 2; right++) {
-    if (str[right] != str[left]) {
-      return 0;
-    }
-    left--;
+  while (temp != 0) {
+    dig = temp % 10;
+    reversed = reversed * 10 + dig;
+    temp /= 10;
   }
 
-  return 1;
+  return x == reversed;
 }
