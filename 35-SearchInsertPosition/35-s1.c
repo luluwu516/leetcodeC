@@ -39,22 +39,3 @@ int searchInsert(int *nums, int numsSize, int target) {
   }
   return numsSize;
 }
-
-int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
-  *returnSize = 2;
-  int *ansPtr = malloc(2 * sizeof(int));
-  if (ansPtr == NULL) {
-    printf("Error!\n");
-    return NULL;
-  }
-  for (int i = 0; i < numsSize - 1; i++) {
-    for (int j = i + 1; j < numsSize; j++) {
-      if (nums[i] + nums[j] == target) {
-        ansPtr[0] = i;
-        ansPtr[1] = j;
-        return ansPtr;
-      }
-    }
-  }
-  return NULL;
-}
