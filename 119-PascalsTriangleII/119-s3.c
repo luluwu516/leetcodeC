@@ -34,7 +34,7 @@ int* getRow(int rowIndex, int* returnSize) {
   *row = 1;
 
   for (int i = 1; i < (*returnSize); i++) {
-    *(row + i) = *(row + i) * ((*returnSize) - i) / i;
+    *(row + i) = (long)*(row + i - 1) * ((*returnSize) - i) / i;
   }
 
   return row;
