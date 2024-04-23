@@ -33,7 +33,7 @@ int* getRow(int rowIndex, int* returnSize) {
   int* row = (int*)malloc((*returnSize) * sizeof(int));
   *row = 1;
 
-  for (long i = 1; i < (*returnSize); i++) {
+  for (int i = 1; i < (*returnSize); i++) {
     *(row + i) = (long)*(row + i - 1) * ((*returnSize) - i) / i;
   }
 
