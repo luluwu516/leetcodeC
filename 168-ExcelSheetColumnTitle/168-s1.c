@@ -10,7 +10,7 @@ int main() {
   char* res;
 
   // input
-  printf("\nEnter the intersect value: ");
+  printf("\nEnter the column number: ");
   scanf("%d", &columnNumber);
 
   // processing
