@@ -1,7 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 5000
 
 // function prototype
 bool isIsomorphic(char* s, char* t);
@@ -41,12 +40,12 @@ bool isIsomorphic(char* s, char* t) {
   char mapT[128] = {0};
 
   for (int i = 0; i < len; i++) {
-    if (mapS[s[i]] == 0 && mapT[t[i]] == 0) {
-      mapS[s[i]] = t[i];
-      mapT[t[i]] = s[i];
-    } else if (mapS[s[i]] != t[i] || mapT[t[i]] != s[i]) {
+    if (mapS[s[i]] != mapT[t[i]]) {
       return false;
     }
+    mapS[s[i]] = i + 1;
+    mapT[t[i]] = i + 1;
   }
+
   return true;
 }
