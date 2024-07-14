@@ -7,7 +7,7 @@ int main() {
   int num, res;
 
   // input
-  printf("\nEnter a string: ");
+  printf("\nEnter an integer: ");
   scanf("%d", &num);
 
   // processing
