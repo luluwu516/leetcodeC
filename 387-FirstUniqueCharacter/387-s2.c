@@ -37,6 +37,7 @@ int firstUniqChar(char* s) {
       }
       if (s[i] == s[j]) {
         foundSecond = 1;
+        break;
       }
     }
     if (!foundSecond) {
